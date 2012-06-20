@@ -1,0 +1,14 @@
+<% @likes = current_user.likes%>
+<%if @likes%>
+			<% if @likes.size >0 %>
+				<%@likes.each do |l|%>
+					<%if l.books.size > 0 %>
+						<%l.books.each do |book|%>	
+						<li><%=book.title%></li>
+						<%end%>
+					<%end%>
+				<%end%>
+	<%end%>
+<%else%>
+<li>No recommended books for you</li>
+<%end%>

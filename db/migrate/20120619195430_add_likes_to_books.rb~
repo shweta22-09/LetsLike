@@ -1,0 +1,6 @@
+class AddLikesToBooks < ActiveRecord::Migration
+  def change
+		remove_column :books, :likes
+		add_column :books, :likes, :integer, :default=>0
+  end
+end

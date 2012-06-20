@@ -1,0 +1,11 @@
+module UsersHelper
+	details = Openlibrary::Data
+	@book_titles = Array.new
+	@titles = Array.new
+	@books.each do |b|
+		id= b.isbn_id
+		book_detail = details.find_by_isbn(id)
+		@book_titles << book_detail
+		@titles = @book_titles.paginate(:page => params[:page],:per_page => 2)
+		end
+end

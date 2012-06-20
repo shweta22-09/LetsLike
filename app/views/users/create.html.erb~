@@ -1,0 +1,15 @@
+<html>
+<%= link_to 'Login' , users_new_path%>
+	<body>
+		<table>
+			<% if @titles.size > 0 %>
+				<%@titles.each do |book|%>
+				<tr><td><%= book%></td>
+					<td><a href = "#">Like</a></td>
+				</tr>
+				<%end%>
+			<%end%>
+		</table>
+		<div align="center" style="margin-top:20px;"><%= will_paginate @titles %></div>
+	</body>
+</html>

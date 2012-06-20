@@ -1,0 +1,39 @@
+<%if session[:user_id]%>
+<% current_user = User.find(session[:user_id])%>
+	<%if current_user.likes.size > 0%>
+	<% user_books = Array.new%>
+	<% current_user.likes.each do |u|%>
+		<%user_books << u.book.title%>
+	<%end%>
+
+<% like = current_user.likes.last%>
+	<%@book = like.book%>
+		<% if @book.users.size > 0%>
+			<% book_array = Array.new%>
+			<%@book.users.each do |u|%>
+				<% if u.likes%>
+					<% if u.likes.size > 0%>
+						<%u.likes.each do |b|%>
+							<%book_array << b.book.title%>
+							<%end%>
+						<%end%>
+					<%end%>
+				<%end%>
+			<%end%>
+	<%end%>
+<%end%>
+
+<%if book_array%>
+	<%@array_b = book_array.uniq%>
+	<% final_array = Array.new%>
+	<% final_array = @array_b - user_books %>
+		<% if final_array.size >0 %>
+			<%final_array.each do |f|%>
+				<li><%= f%></li>
+			<%end%>	
+		<%end%>
+<%else%>
+	<p>No Book recommendation for you</p>
+<%end%>
+
+

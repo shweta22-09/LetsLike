@@ -1,0 +1,7 @@
+Rails Version - 3.2.3
+Ruby Version - 1.8.7
+Database - Mysql
+All the required gems, I have coded in the Gemfile.
+	Added gems
+		1. gem 'will_paginate','~> 3.0.3'
+		2. gem 'openlibrary'

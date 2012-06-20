@@ -1,0 +1,10 @@
+class SetDefaultToLike < ActiveRecord::Migration
+  def up
+		count = 0
+		change_column :books, :likes, :integer, :default => count, :null => false
+
+  end
+
+  def down
+  end
+end

@@ -1,0 +1,4 @@
+class AddLikeToBooks < ActiveRecord::Migration
+  def change
+  end
+end

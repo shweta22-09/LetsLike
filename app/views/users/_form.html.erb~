@@ -1,0 +1,13 @@
+<html>
+	<body>
+		
+			<%= form_for (@user) do |f|%>
+			<h2>Username:</h2>
+				<h4><input type= "text" name= "user[title]" style="background-color:yellow;"></h4>
+			
+				<h2><%= f.submit 'Submit'%></h2>
+			
+			<%end%>
+		
+	</body>
+</html>

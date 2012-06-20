@@ -1,0 +1,13 @@
+<%if @users%>
+			<% if @users.size >0 %>
+				<%@users.each do |u|%>
+					<%if u.books.size > 0 %>
+						<%u.books.each do |book|%>	
+						<li><%=book.title%></li>
+						<%end%>
+					<%end%>
+				<%end%>
+			<%end%>			
+	<%else%>
+<p>No recommended	books for you</p>
+<%end%>

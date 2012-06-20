@@ -1,0 +1,1 @@
+<%= render 'recommended_books'%>

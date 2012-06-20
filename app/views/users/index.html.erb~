@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<style type="text/css">
+.hide_button
+{
+display :none;
+}
+.show_button
+{
+display :block;
+}
+</style>
+
+<script type="text/javascript">
+	function addLike()
+{ 
+	var xmlhttp=new XMLHttpRequest(a);
+var b = 	document.getElementById("book[1]").value;
+	
+alert(b);
+return
+	xmlhttp.open("GET","/users/like?id="+a,true);
+	xmlhttp.send();
+	xmlhttp.onreadystatechange=function()
+  	{
+   		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      { 
+     		document.getElementById("recommend").innerHTML=xmlhttp.responseText;   
+     		document.getElementById("like").setAttribute("class","hide_button");
+     		
+     	}
+  	}
+}
+</script>
+</head>
+	<body>
+		
+			<% if @books.size > 0 %>
+				<% @books.each do |book|%>
+				
+					
+							<h2><%= book.id%> . <%= book.title%></h2>
+							<%if session[:user_id]%>
+								<p><%= link_to 'Like',"/users/#{book.id}/like"%> <%= book.choosed%> </p>
+							<%else%>
+								<p><%= link_to 'Like',new_user_path%> <%= book.choosed%> </p>
+							<%end%>
+
+				
+				<%end%>
+			<%end%>
+		
+	<div align="center" style="margin-top:20px;"><%= will_paginate @books %></div>
+	</body>
+</html>
+
+
+
+
+

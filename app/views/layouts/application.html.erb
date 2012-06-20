@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>LetsLike</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+	<div id="container">
+	
+		<div id="banner"><h1>LETS LIKE!!</h1>
+			<%if session[:user_id] %>
+				<h2 style="color:black;">Welcome:<%= User.find(session[:user_id]).title %>	</h2>		
+			<%end%>
+		</div> <!-- end banner -->
+		
+	<div id="navbar">
+		<ul>
+			<li id="active"><a href="/users" >Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Portfolio</a></li>				
+			<%if (!session[:user_id]) %><li ><a href="/users/new">Login</a></li>
+			<%else%>			
+				<li><a href = "/users/logout">Logout</a></li>
+			<% end %>
+			<li><a href="#">Contact</a> </li>
+		</ul>
+	</div> <!-- end navbar -->
+
+<div class="clear">&nbsp;</div>
+		
+		<div id="sidebar">
+		<h2>Recommended Books</h2>
+		
+		<ul>
+			<%=render :partial=>'/users/recommended_books' %>
+		</ul>
+		
+		
+		</div> <!-- end sidebar -->
+
+		<div id="content">
+				<%= yield %>
+		</div> <!-- end main content -->
+
+		
+		
+	</div> <!-- end container -->
+</body>
+</html>

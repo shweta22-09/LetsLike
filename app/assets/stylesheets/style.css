@@ -1,0 +1,102 @@
+* {
+margin : 0;
+padding : 0;
+border: 0;
+}
+	
+body {
+font: 76% "Century Gothic", verdana, sans-serif;
+line-height: 2em;
+color: #333;
+background: #F8F9FA url(images/bg.jpg) top center;
+}
+
+/* *****************************common properties *****************************/
+
+h1,h2,h3 {font-weight: lighter;letter-spacing: 5px;}
+
+h1 {font-size: 2.5em; color: #fff;padding: 1em;}
+h2 {font-size: 1.8em; color: #95A775;padding: 0.8em 0;}
+h3 {font-size: 1.3em; color: #95A775;padding: 0.5em 0;font-variant: small-caps;}
+p {padding: 5px;}
+blockquote {background: #FEFDF6;margin :0 20px;padding : 5px;color: #666;}
+em {color: #aaa;font-style: italic;}
+
+.big {letter-spacing: 2px;font-size: 150%;font-weight: bold;color: #99C647;padding: 0.5em;}
+.clear {clear:both; height:1px; width:1px; line-height:0em; overflow:hidden;}
+
+/* links */
+a, a:visited {text-decoration: none;color: #3898B7;background: inherit;}
+a:hover {text-decoration: underline;color: #305F00;background: inherit;}
+
+/*  lists */
+ul {margin-bottom: 10px;}
+ul li {margin: 0 0 0 20px;list-style: disc;color : #318C00;}
+
+/*  images */
+img {border: 0;}
+
+#container {
+width: 760px;
+margin: 0 auto;
+padding: 10px;
+background: #fff;
+}
+#banner {
+padding: 10px;
+margin-bottom: 0;
+height: 200px;
+background: #99C647 url(images/banner.jpg);
+}
+			/*TOP NAVIGATION*/
+#navbar ul {
+float: left;
+width: 100%;
+padding: 0;
+margin: 0;
+list-style-type: none;
+font-size: 130%;
+text-align: center;
+border-top: 3px solid #95A775;
+border-bottom: 3px solid #95A775;
+background: #385900;
+color: #000;
+}
+#navbar a {
+float: left;
+width: 6em;
+height: 30px;
+text-decoration: none;
+padding: 0.5em 0.6em;
+border-right: 1px solid #95A775;
+background: #385900;
+color: #fff;
+}
+#navbar a:hover {
+background:#8BBA00;
+color: #000;
+}
+#navbar li {
+display:inline;
+}
+#content {
+padding: 10px;
+margin-right: 200px;
+}
+#sidebar {
+float: right;
+width: 180px;
+margin: 0;
+padding: 10px;
+}
+#footer {
+clear: both;
+padding: 5px;
+margin-top: 20px;
+border-top: 2px solid #8BBA00;
+font-size: 0.8em;
+background: #385900;
+color: #999;
+}
+#footer a, #footer a:visited {text-decoration: none;color: #95A775;background: inherit;}
+#footer a:hover {text-decoration: underline;color: #eee;background: inherit;}
